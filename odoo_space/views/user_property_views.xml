@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="user_model_action" model="ir.actions.act_window">
+        <field name="name">List of Users</field>
+        <field name="res_model">user.property</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+          <p class="o_view_nocontent_smiling_face">
+            Are!! Yeh to khali nikla
+          </p>
+        </field>
+    </record>
+
+    <record id="user_view_tree" model="ir.ui.view">
+        <field name="name">user.tree</field>
+        <field name="model">user.property</field>
+        <field name="arch" type="xml">
+            <tree string="List of Users">
+                <field name="name"/>
+                <field name="department"/>
+                <field name="designation"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="user_view_form" model="ir.ui.view">
+        <field name="name">user.form</field>
+        <field name="model">user.property</field>
+        <field name="arch" type="xml">
+            <form string="User Form">
+                <sheet>
+                <h1><field name="name" nolabel="1" autofocus="true"/></h1>
+                    <group>
+                        <group>
+                            <field name="address"/>
+                            <field name="postal"/>
+                            <field name="email"/>
+                            <field name="phone"/>
+                            <field name="has_vehicle"/>
+
+                        </group>
+                        <group>
+                            <field name="department"/>
+                            <field name="designation"/>
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string="Vehicle">
+                            <group>
+                                <field name="vehicle_type"/>
+                                <field name="fuel_type"/>
+                                <field name="licence_plate"/>
+                                <field name="vehiclepool"/>
+                                <field name="sitting_cap"/>
+                            </group>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+</odoo>

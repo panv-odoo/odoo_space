@@ -1,0 +1,3 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+odoo_space.access_user_property,access_user_property,odoo_space.model_user_property,base.group_user,1,1,1,1
+odoo_space.access_station_property,access_station_property,odoo_space.model_station_property,base.group_user,1,1,1,1
