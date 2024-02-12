@@ -7,9 +7,43 @@
         <field name="view_mode">tree,form</field>
         <field name="help" type="html">
           <p class="o_view_nocontent_smiling_face">
-            Are!! Yeh to khali nikla
+            No Record Found!! <br/>
+            Lets create one :)
           </p>
         </field>
+    </record>
+
+    <record id="station_property_view_form" model="ir.ui.view">
+      <field name="name">station_property.view.form</field>
+      <field name="model">station.property</field>
+      <field name="arch" type="xml">
+        <form string="Station Form">
+          <sheet>
+            <h1>
+              <field name="name" />
+            </h1>
+            <group>
+              <field name="capacity" />
+              <field name="availability" />
+              <field name="remaining_time" />
+            </group>
+          </sheet>
+        </form>
+      </field>
+    </record>
+
+    <record id="station_property_view_tree" model="ir.ui.view">
+      <field name="name">station_property.view.tree</field>
+      <field name="model">station.property</field>
+      <field name="arch" type="xml">
+        <tree string="List of Stations">
+          <field name="name" />
+          <field name="capacity" />
+          <field name="availability" />
+          <field name="remaining_time" string="will be available in (minutes)"/>
+          <field name="active" optional='1' />
+        </tree>
+      </field>
     </record>
 
 </odoo>
