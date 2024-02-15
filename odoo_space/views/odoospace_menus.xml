@@ -2,13 +2,13 @@
 <odoo>
     <menuitem id="ospace_menu_root" name="Odoo Space" web_icon="odoo_space,static/description/icon.png" >
         <menuitem id="ospace_first_level_menu1" name="Charging Stations"  sequence="1">
-            <menuitem id="user_model_menu_action1" name="Station List" action="station_model_action" sequence="1"/>
+            <menuitem id="station_model_menu_action" name="Station List" action="station_model_action" sequence="1"/>
         </menuitem>
         <menuitem id="ospace_first_level_menu2" name="Canteen" sequence="2">
             <menuitem id="table_model_menu_action2" name="Table List" action="station_model_action" sequence="1"/>
         </menuitem>
         <menuitem id="ospace_first_level_menu3" name="Users" sequence="3">
-            <menuitem id="user_model_menu_action2" name="User List" action="station_model_action" sequence="1"/>
+            <menuitem id="user_model_menu_action" name="User List" action="user_model_action" sequence="1"/>
         </menuitem>
     </menuitem>
 </odoo>

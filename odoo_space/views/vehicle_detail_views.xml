@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="vehicle_view_tree" model="ir.ui.view">
+        <field name="name">vehicle.view.tree</field>
+        <field name="model">vehicle.detail</field>
+        <field name="arch" type="xml">
+            <tree string="List of Vehiles">
+                <field name="license_plate"/>
+                <field name="model"/>
+                <field name ="manufacturer"/>
+                <field name="battery_capacity"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="vehicle_view_form" model="ir.ui.view">
+        <field name="name">vehicle.view.form</field>
+        <field name="model">vehicle.detail</field>
+        <field name="arch" type="xml">
+            <form string="Vehicle Form">
+                <sheet>
+                    <group>
+                        <field name="license_plate"/>
+                        <field name="model"/>
+                        <field name ="manufacturer"/>
+                        <field name="battery_capacity"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+</odoo>

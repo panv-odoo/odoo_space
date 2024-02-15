@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- station record -->
+
+    <record id="charging_station_1" model="charging.station">
+        <field name="name">Charging Station 1</field>
+        <field name="location">lln1</field>
+        <field name="status">available</field>
+        <field name="voltage_capacity">11.0</field>
+        <field name="active">True</field>
+    </record>
+    <record id="charging_station_2" model="charging.station">
+        <field name="name">Charging Station 2</field>
+        <field name="location">lln2</field>
+        <field name="status">available</field>
+        <field name="voltage_capacity">11.0</field>
+        <field name="active">True</field>
+    </record>
+    <record id="charging_station_3" model="charging.station">
+        <field name="name">Charging Station 3</field>
+        <field name="location">lln1</field>
+        <field name="status">occupied</field>
+        <field name="voltage_capacity">11.0</field>
+        <field name="active">True</field>
+    </record>
+    <record id="charging_station_4" model="charging.station">
+        <field name="name">Charging Station 4</field>
+        <field name="location">lln2</field>
+        <field name="status">available</field>
+        <field name="voltage_capacity">11.0</field>
+        <field name="active">True</field>
+    </record>
+    <record id="charging_station_5" model="charging.station">
+        <field name="name">Charging Station 5</field>
+        <field name="location">lln1</field>
+        <field name="status">available</field>
+        <field name="voltage_capacity">11.0</field>
+        <field name="active">True</field>
+    </record>
+    <record id="charging_station_6" model="charging.station">
+        <field name="name">Charging Station 6</field>
+        <field name="location">lln2</field>
+        <field name="status">occupied</field>
+        <field name="voltage_capacity">11.0</field>
+        <field name="active">True</field>
+    </record>
+    <record id="charging_station_7" model="charging.station">
+        <field name="name">Charging Station 7</field>
+        <field name="location">lln1</field>
+        <field name="status">available</field>
+        <field name="voltage_capacity">11.0</field>
+        <field name="active">True</field>
+    </record>
+    <record id="charging_station_8" model="charging.station">
+        <field name="name">Charging Station 8</field>
+        <field name="location">lln2</field>
+        <field name="status">available</field>
+        <field name="voltage_capacity">11.0</field>
+        <field name="active">True</field>
+    </record>
+    <record id="charging_station_9" model="charging.station">
+        <field name="name">Charging Station 9</field>
+        <field name="location">lln1</field>
+        <field name="status">occupied</field>
+        <field name="voltage_capacity">11.0</field>
+        <field name="active">True</field>
+    </record>
+    <record id="charging_station_10" model="charging.station">
+        <field name="name">Charging Station 10</field>
+        <field name="location">lln2</field>
+        <field name="status">available</field>
+        <field name="voltage_capacity">11.0</field>
+        <field name="active">True</field>
+    </record>
+
+    <!-- user details -->
+
+    <record id="user_1" model="user.detail">
+        <field name="name">John Doe</field>
+        <field name="address">123 Main St</field>
+        <field name="department">Engineering</field>
+        <field name="designation">Software Engineer</field>
+        <field name="phone">123-456-7890</field>
+        <field name="email">john.doe@example.com</field>
+        <field name="active">True</field>
+    </record>
+    <record id="user_2" model="user.detail">
+        <field name="name">Jane Smith</field>
+        <field name="address">456 Elm St</field>
+        <field name="department">Marketing</field>
+        <field name="designation">Marketing Manager</field>
+        <field name="phone">987-654-3210</field>
+        <field name="email">jane.smith@example.com</field>
+        <field name="active">True</field>
+    </record>
+    <record id="user_3" model="user.detail">
+        <field name="name">Michael Brown</field>
+        <field name="address">789 Oak St</field>
+        <field name="department">Sales</field>
+        <field name="designation">Sales Representative</field>
+        <field name="phone">555-123-4567</field>
+        <field name="email">michael.brown@example.com</field>
+        <field name="active">True</field>
+    </record>
+    <record id="user_4" model="user.detail">
+        <field name="name">Emily Wilson</field>
+        <field name="address">101 Pine St</field>
+        <field name="department">Finance</field>
+        <field name="designation">Financial Analyst</field>
+        <field name="phone">111-222-3333</field>
+        <field name="email">emily.wilson@example.com</field>
+        <field name="active">True</field>
+    </record>
+    <record id="user_5" model="user.detail">
+        <field name="name">Chris Evans</field>
+        <field name="address">111 Oak St</field>
+        <field name="department">HR</field>
+        <field name="designation">HR Manager</field>
+        <field name="phone">111-222-3333</field>
+        <field name="email">chris.evans@example.com</field>
+        <field name="active">True</field>
+    </record>
+    <record id="user_6" model="user.detail">
+        <field name="name">Sophia Johnson</field>
+        <field name="address">222 Maple St</field>
+        <field name="department">Operations</field>
+        <field name="designation">Operations Manager</field>
+        <field name="phone">444-555-6666</field>
+        <field name="email">sophia.johnson@example.com</field>
+        <field name="active">True</field>
+    </record>
+    <record id="user_7" model="user.detail">
+        <field name="name">Daniel Lee</field>
+        <field name="address">333 Elm St</field>
+        <field name="department">IT</field>
+        <field name="designation">Systems Administrator</field>
+        <field name="phone">777-888-9999</field>
+        <field name="email">daniel.lee@example.com</field>
+        <field name="active">True</field>
+    </record>
+    <record id="user_8" model="user.detail">
+        <field name="name">Olivia Taylor</field>
+        <field name="address">444 Oak St</field>
+        <field name="department">Marketing</field>
+        <field name="designation">Marketing Coordinator</field>
+        <field name="phone">111-222-3333</field>
+        <field name="email">olivia.taylor@example.com</field>
+        <field name="active">True</field>
+    </record>
+    <record id="user_9" model="user.detail">
+        <field name="name">William Martinez</field>
+        <field name="address">555 Elm St</field>
+        <field name="department">Sales</field>
+        <field name="designation">Sales Manager</field>
+        <field name="phone">111-222-3333</field>
+        <field name="email">william.martinez@example.com</field>
+        <field name="active">True</field>
+    </record>
+    <record id="user_10" model="user.detail">
+        <field name="name">Sophie Clark</field>
+        <field name="address">666 Maple St</field>
+        <field name="department">Finance</field>
+        <field name="designation">Financial Analyst</field>
+        <field name="phone">111-222-3333</field>
+        <field name="email">sophie.clark@example.com</field>
+        <field name="active">True</field>
+    </record>
+    
+    <!-- vehicle record  -->
+    
+    <record id="vehicle_1" model="vehicle.detail">
+        <field name="license_plate">ABC123</field>
+        <field name="model">Tesla - Model S (Red)</field>
+        <field name="manufacturer">tesla</field>
+        <field name="user_id" ref="user_1"/>
+        <field name="battery_capacity">114.0</field>
+    </record>
+    <record id="vehicle_2" model="vehicle.detail">
+        <field name="license_plate">XYZ789</field>
+        <field name="model">Nissan - Leaf (Blue)</field>
+        <field name="manufacturer">nissan</field>
+        <field name="user_id" ref="user_2"/>
+        <field name="battery_capacity">114.0</field>
+    </record>
+    <record id="vehicle_3" model="vehicle.detail">
+        <field name="license_plate">DEF456</field>
+        <field name="model">Chevrolet - Bolt (Black)</field>
+        <field name="manufacturer">chevrolet</field>
+        <field name="user_id" ref="user_3"/>
+        <field name="battery_capacity">114.0</field>
+    </record>
+    <record id="vehicle_4" model="vehicle.detail">
+        <field name="license_plate">GHI789</field>
+        <field name="model">Ford - Mustang (Yellow)</field>
+        <field name="manufacturer">ford</field>
+        <field name="user_id" ref="user_4"/>
+        <field name="battery_capacity">114.0</field>
+    </record>
+    <record id="vehicle_5" model="vehicle.detail">
+        <field name="license_plate">JKL101</field>
+        <field name="model">Audi - A4 (Silver)</field>
+        <field name="manufacturer">audi</field>
+        <field name="user_id" ref="user_5"/>
+        <field name="battery_capacity">114.0</field>
+    </record>
+    <record id="vehicle_6" model="vehicle.detail">
+        <field name="license_plate">MNO111</field>
+        <field name="model">Hyundai - Kona (White)</field>
+        <field name="manufacturer">hyundai</field>
+        <field name="user_id" ref="user_6"/>
+        <field name="battery_capacity">114.0</field>
+    </record>
+    <record id="vehicle_7" model="vehicle.detail">
+        <field name="license_plate">PQR121</field>
+        <field name="model">BMW - i3 (Black)</field>
+        <field name="manufacturer">bmw</field>
+        <field name="user_id" ref="user_7"/>
+        <field name="battery_capacity">114.0</field>
+    </record>
+    <record id="vehicle_8" model="vehicle.detail">
+        <field name="license_plate">STU131</field>
+        <field name="model">Tesla - Model 3 (Blue)</field>
+        <field name="manufacturer">tesla</field>
+        <field name="user_id" ref="user_8"/>
+        <field name="battery_capacity">114.0</field>
+    </record>
+    <record id="vehicle_9" model="vehicle.detail">
+        <field name="license_plate">VWX141</field>
+        <field name="model">Nissan - Leaf (Green)</field>
+        <field name="manufacturer">nissan</field>
+        <field name="user_id" ref="user_9"/>
+        <field name="battery_capacity">114.0</field>
+    </record>
+    <record id="vehicle_10" model="vehicle.detail">
+        <field name="license_plate">YZA151</field>
+        <field name="model">Chevrolet - Bolt (Red)</field>
+        <field name="manufacturer">chevrolet</field>
+        <field name="user_id" ref="user_10"/>
+        <field name="battery_capacity">114.0</field>
+    </record>
+    
+</odoo>

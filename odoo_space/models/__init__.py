@@ -1,3 +1,4 @@
-from . import user_property 
-from . import station_property 
+from . import user_detail 
+from . import charging_station 
+from . import vehicle_detail
 # must match the name of the model file
