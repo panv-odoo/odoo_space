@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="session_model_action" model="ir.actions.act_window">
+        <field name="name">charging.sessions</field>
+        <field name="res_model">charging.session</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face"> No Record Found!! <br /> Lets create one :) </p>
+        </field>
+    </record>
+
+    <record id="session_view_form" model="ir.ui.view">
+        <field name="name">charging.session.view.form</field>
+        <field name="model">charging.session</field>
+        <field name="arch" type="xml">
+            <form string="Charging Session Form">
+                <sheet>
+                    <group>
+                        <field name="user_id" />
+                        <field name="station_id" />
+                        <field name="vehicle_id" />
+                        <field name="current_charging" />
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="station_view_search" model="ir.ui.view">
+        <field name="name">charging.session.view.search</field>
+        <field name="model">charging.session</field>
+        <field name="arch" type="xml">
+            <search string="Search Charging Session">
+                <field name="user_id" />
+                <field name="station_id" />
+                <field name="vehicle_id" />
+                <field name="status"/>
+            </search>
+        </field>
+    </record>
+
+    <record id="station_view_tree" model="ir.ui.view">
+        <field name="name">charging.session.view.tree</field>
+        <field name="model">charging.session</field>
+        <field name="arch" type="xml">
+            <tree string="List of Charging Sessions">
+                <field name="station_id" />
+                <field name="vehicle_id" />
+                <field name="status" />
+            </tree>
+        </field>
+    </record>
+
+</odoo>

@@ -19,6 +19,10 @@
       <field name="model">charging.station</field>
       <field name="arch" type="xml">
         <form string="Station Form">
+          <header>
+            <button string="BOOK STATION" name="odoo_space.session_model_action" type="action" class="oe_highlight"/>
+            <field name="status" widget="statusbar"  />
+          </header>
           <sheet>
             <h1>
               <field name="name" autofocus="true"/>

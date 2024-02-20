@@ -13,6 +13,7 @@
         
         'views/vehicle_detail_views.xml',
         'views/user_detail_views.xml',
+        'views/charging_session_views.xml',
         'views/charging_station_views.xml',
         'views/odoospace_menus.xml',
         
