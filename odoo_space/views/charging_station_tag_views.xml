@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="station_tag_model_action" model="ir.actions.act_window">
+        <field name="name">List of Tags</field>
+        <field name="res_model">charging.station.tag</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+          <p class="o_view_nocontent_smiling_face">
+            No Record Found!! <br/>
+            Lets create one :)
+          </p>
+        </field>
+    </record>
+
+    <record id="station_tag_view_form" model="ir.ui.view">
+      <field name="name">station.tag.view.form</field>
+      <field name="model">charging.station.tag</field>
+      <field name="arch" type="xml">
+        <form string="Property Tag">
+          <sheet>
+            <group>
+              <field name="name" />
+              <field name="color" widget="color_picker" />
+            </group>
+          </sheet>
+        </form>
+      </field>
+    </record>
+
+    <record id="station_tag_view_tree" model="ir.ui.view">
+      <field name="name">station.tag.view.tree</field>
+      <field name="model">charging.station.tag</field>
+      <field name="arch" type="xml">
+        <tree string="">
+          <field name="name" />
+          <field name="color" widget="color_picker" />        
+        </tree>
+      </field>
+    </record>
+</odoo>

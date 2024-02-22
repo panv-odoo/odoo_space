@@ -2,7 +2,7 @@ from odoo import models,fields
 class Vehicle(models.Model):
     _name = "vehicle.detail"
     _description = "Vehicle Detail Model"
-
+    _rec_name = 'license_plate'
     license_plate = fields.Char('License Plate',required=True)
     model = fields.Char('Model',required=True,help="car model - colour")
     manufacturer = fields.Selection(

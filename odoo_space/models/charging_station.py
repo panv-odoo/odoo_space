@@ -5,7 +5,7 @@ class ChargingStation(models.Model):
     _name = "charging.station"
     # never user underscore in name
     _description = "Charging Station Model"
-
+    _inherit = ['mail.thread','mail.activity.mixin']
 
     name = fields.Char('Code',required=True,default='Charging Station',copy=False)
     location = fields.Selection(
@@ -18,7 +18,8 @@ class ChargingStation(models.Model):
         default='available'
     )
     voltage_capacity = fields.Float('Voltage Capacity (KWh)',default=11.0)
-    active = fields.Boolean('Active',default=True)  
+    active = fields.Boolean('Active',default=True)
+    session_ids = fields.One2many('charging.session','station_id')
     # capacity = fields.Float('Charging Capacity (kWh)',copy=False)
     # availability = fields.Boolean('is Available',required=True,default=True)
     # remaining_time = fields.Datetime('Remaining Time',copy=False,default=lambda self: fields.datetime.now()+relativedelta(minutes=30))

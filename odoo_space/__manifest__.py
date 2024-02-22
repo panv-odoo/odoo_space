@@ -11,6 +11,7 @@
     'data':[
         'security/ir.model.access.csv',
         
+        'views/charging_station_tag_views.xml',
         'views/vehicle_detail_views.xml',
         'views/user_detail_views.xml',
         'views/charging_session_views.xml',

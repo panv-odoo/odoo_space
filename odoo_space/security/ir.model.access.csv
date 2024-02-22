@@ -3,3 +3,4 @@ odoo_space.access_user_detail,access_user_detail,odoo_space.model_user_detail,ba
 odoo_space.access_charging_station,access_charging_station,odoo_space.model_charging_station,base.group_user,1,1,1,1
 odoo_space.access_vehicle_detail,access_vehicle_detail,odoo_space.model_vehicle_detail,base.group_user,1,1,1,1
 odoo_space.access_charging_session,access_charging_session,odoo_space.model_charging_session,base.group_user,1,1,1,1
+odoo_space.access_charging_station_tag,access_charging_station_tag,odoo_space.model_charging_station_tag,base.group_user,1,1,1,1

@@ -18,8 +18,8 @@
                 <sheet>
                     <group>
                         <field name="user_id" />
-                        <field name="station_id" />
-                        <field name="vehicle_id" />
+                        <field name="station_id"/>
+                        <field name="vehicle_id" domain="[('user_id','=',user_id)]"/>
                         <field name="current_charging" />
                     </group>
                 </sheet>
@@ -40,13 +40,17 @@
         </field>
     </record>
 
-    <record id="station_view_tree" model="ir.ui.view">
+    <record id="session_view_tree" model="ir.ui.view">
         <field name="name">charging.session.view.tree</field>
         <field name="model">charging.session</field>
         <field name="arch" type="xml">
             <tree string="List of Charging Sessions">
                 <field name="station_id" />
                 <field name="vehicle_id" />
+                <field name="in_time" />
+                <field name="out_time" />
+                <button string="Connect" name="action_charge" type="object" icon="fa-plug"/>
+                <button string="Disconnect" name="action_discharge" type="object" icon="fa-stop-circle-o"/>
                 <field name="status" />
             </tree>
         </field>
