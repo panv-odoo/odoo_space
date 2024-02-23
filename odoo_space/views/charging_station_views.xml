@@ -5,7 +5,7 @@
     <field name="name">List of Stations</field>
     <field name="res_model">charging.station</field>
     <field name="view_mode">tree,form</field>
-    <field name="context">{"search_default_available_by_location":1}</field>
+    <field name="context">{"search_default_available":1,'group_by':'location'}</field>
     <field name="help" type="html">
       <p class="o_view_nocontent_smiling_face"> No Record Found!! <br /> Lets create one :) </p>
     </field>
@@ -25,13 +25,14 @@
           <h1>
             <field name="name" autofocus="true" />
           </h1>
+          <field name="tag_ids" widget="many2many_tags" options="{'color_field': 'color'}" />
           <group>
             <field name="location" />
             <field name="voltage_capacity" />
             <field name="status" />
           </group>
           <notebook>
-            <page  string="Session History">
+            <page string="Session History">
               <field name="session_ids" />
             </page>
           </notebook>
@@ -56,9 +57,10 @@
         <field name="location" />
         <field name="status" />
         <field name="voltage_capacity" />
-        <filter name="available_by_location" string="Available"
-          domain="['|',('active', '=', 'True'),('status','=','available')]"
-          context="{'group_by': 'location'}" />
+        <filter name="available" string="Available" domain="[('status', '=', 'available')]" />
+        <group expand="1" name="postal" string="Location">
+          <filter name="location" string="Location" context="{'group_by': 'location'}"/>
+        </group>
       </search>
     </field>
   </record>

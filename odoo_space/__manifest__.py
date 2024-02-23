@@ -20,7 +20,7 @@
         
     ],
     'demo':[
-        'data/data.xml',
+        'data/demo_data.xml',
     ],
     'license': 'LGPL-3',
 }

@@ -20,6 +20,7 @@ class ChargingStation(models.Model):
     voltage_capacity = fields.Float('Voltage Capacity (KWh)',default=11.0)
     active = fields.Boolean('Active',default=True)
     session_ids = fields.One2many('charging.session','station_id')
+    tag_ids = fields.Many2many('charging.station.tag',string='Tags')
     # capacity = fields.Float('Charging Capacity (kWh)',copy=False)
     # availability = fields.Boolean('is Available',required=True,default=True)
     # remaining_time = fields.Datetime('Remaining Time',copy=False,default=lambda self: fields.datetime.now()+relativedelta(minutes=30))
