@@ -13,6 +13,7 @@ class User(models.Model):
     email = fields.Char("Email",required=True)
     vehicle_ids = fields.One2many('vehicle.detail','user_id')
     active = fields.Boolean('Active',default=True)
+    session_ids = fields.One2many('charging.session','user_id')
     # postal = fields.Char('Pincode',required=True)
     # designation = fields.Char('Designation',required=True)
     

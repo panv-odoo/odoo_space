@@ -51,6 +51,9 @@
                         <page string="Vehicle">
                             <field name="vehicle_ids" />
                         </page>
+                        <page string="Charging Sessions">
+                            <field name="session_ids" options="{'no_create': True, 'no_create_edit':True}" readonly="1"/>
+                        </page>
                     </notebook>
                 </sheet>
                 <!-- Chatter -->

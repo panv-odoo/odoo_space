@@ -4,7 +4,7 @@
   <record id="station_model_action" model="ir.actions.act_window">
     <field name="name">List of Stations</field>
     <field name="res_model">charging.station</field>
-    <field name="view_mode">tree,form</field>
+    <field name="view_mode">tree,form,kanban</field>
     <field name="context">{"search_default_available":1,'group_by':'location'}</field>
     <field name="help" type="html">
       <p class="o_view_nocontent_smiling_face"> No Record Found!! <br /> Lets create one :) </p>
@@ -17,11 +17,13 @@
     <field name="arch" type="xml">
       <form string="Station Form">
         <header>
-          <button string="BOOK STATION" name="odoo_space.session_model_action" type="action"
+          <button string="BOOK STATION" name="open_session_form" type="object"
             class="oe_highlight" />
           <field name="status" widget="statusbar" />
         </header>
         <sheet>
+          <widget name="web_ribbon" title="Occupied" bg_color="text-bg-danger"
+            invisible="status == 'available'" />
           <h1>
             <field name="name" autofocus="true" />
           </h1>
@@ -32,8 +34,12 @@
             <field name="status" />
           </group>
           <notebook>
+            <page string="Current Session">
+              <field name="current_session_ids"
+                options="{'sort':[{'name':'in_line','label':'asc'}]}" />
+            </page>
             <page string="Session History">
-              <field name="session_ids" />
+              <field name="session_history_ids" />
             </page>
           </notebook>
         </sheet>
@@ -59,7 +65,7 @@
         <field name="voltage_capacity" />
         <filter name="available" string="Available" domain="[('status', '=', 'available')]" />
         <group expand="1" name="postal" string="Location">
-          <filter name="location" string="Location" context="{'group_by': 'location'}"/>
+          <filter name="location" string="Location" context="{'group_by': 'location'}" />
         </group>
       </search>
     </field>
@@ -72,11 +78,64 @@
       <tree string="List of Stations">
         <field name="name" />
         <field name="location" />
-        <field name="status" />
         <!-- <field name="remaining_time" string="will be available in (minutes)"/> -->
+        <field name="tag_ids" widget="many2many_tags" options="{'color_field': 'color'}"/>
+        <field name="status" widget="badge" decoration-success="status == 'available'" decoration-danger="status == 'occupied'" />
         <field name="voltage_capacity" optional='1' />
         <field name="active" optional='1' />
       </tree>
+    </field>
+  </record>
+
+  <record id="station_view_kanban" model="ir.ui.view">
+    <field name="name">charging.station.view.kanban</field>
+    <field name="model">charging.station</field>
+    <field name="arch" type="xml">
+      <kanban records_draggable="0">
+        <field name="name" />
+        <field name="status" />
+        <field name="location" />
+        <templates>
+          <t t-name="kanban-box">
+            <div class="oe_kanban_global_click oe_kanban_card ">
+              <div class="o_kanban_record_top mb16">
+                <div class="o_kanban_record_headings mt4">
+                  <strong class="o_kanban_record_title">
+                    <span t-out="record.name.value" />
+                  </strong>
+                </div>
+                <strong>
+                  <field name="status" widget="label_selection"
+                    options="{'classes': {'occupied': 'danger', 'available': 'success'}}" />
+                </strong>
+
+              </div>
+              <div class="o_kanban_record_data">
+                <div class="o_kanban_record_data_value"> Location : <field name="location" />
+                </div>
+              </div>
+              <div class="o_kanban_record_data">
+                <div class="o_kanban_record_data_value"> Voltage Capacity : <field
+                    name="voltage_capacity" /> KWh </div>
+              </div>
+              <div class="o_kanban_record_bottom mt-3">
+                <div class="o_kanban_tags_section">
+                  <span class="oe_kanban_list_many2many">
+                    <field name="tag_ids" widget="many2many_tags"
+                      options="{'color_field': 'color'}" />
+                  </span>
+                </div>
+              </div>
+              <!-- <div class="o_kanban_record_bottom my-2">
+                <div class="oe_kanban_bottom_right">
+                  <button string="BOOK STATION" name="open_session_form" type="object"
+                    class="btn btn-outline-primary" />
+                </div>
+              </div> -->
+            </div>
+          </t>
+        </templates>
+      </kanban>
     </field>
   </record>
 

@@ -1,5 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<odoo noupdate="1">
+
+    <!-- station tags -->
+    <record id="station_tag_standard_charging" model="charging.station.tag">
+        <field name="name">Standard Charging</field>
+        <field name="color">4</field>
+        <field name="display_name">Standard Charging</field>
+    </record>
+    
+    <record id="station_tag_fast_charging" model="charging.station.tag">
+        <field name="name">Fast Charging</field>
+        <field name="color">3</field>
+        <field name="display_name">Fast Charging</field>
+    </record>
+    
+    <record id="station_tag_2_wheeler" model="charging.station.tag">
+        <field name="name">2 Wheeler</field>
+        <field name="color">7</field>
+        <field name="display_name">2 Wheeler</field>
+    </record>
+    
+    <record id="station_tag_4_wheeler" model="charging.station.tag">
+        <field name="name">4 Wheeler</field>
+        <field name="color">6</field>
+        <field name="display_name">4 Wheeler</field>
+    </record>
 
     <!-- station record -->
 
@@ -9,6 +34,7 @@
         <field name="status">available</field>
         <field name="voltage_capacity">11.0</field>
         <field name="active">True</field>
+        <field name="tag_ids" eval="[(6, 0, [ref('station_tag_2_wheeler')])]"/>
     </record>
     <record id="charging_station_2" model="charging.station">
         <field name="name">Charging Station 2</field>
@@ -16,6 +42,7 @@
         <field name="status">available</field>
         <field name="voltage_capacity">11.0</field>
         <field name="active">True</field>
+        <field name="tag_ids" eval="[(6, 0,  [ref('station_tag_4_wheeler')])]"/>
     </record>
     <record id="charging_station_3" model="charging.station">
         <field name="name">Charging Station 3</field>
@@ -23,6 +50,7 @@
         <field name="status">occupied</field>
         <field name="voltage_capacity">11.0</field>
         <field name="active">True</field>
+        <field name="tag_ids" eval="[(6, 0,[ref('station_tag_standard_charging')])]"/>
     </record>
     <record id="charging_station_4" model="charging.station">
         <field name="name">Charging Station 4</field>
@@ -30,6 +58,7 @@
         <field name="status">available</field>
         <field name="voltage_capacity">11.0</field>
         <field name="active">True</field>
+        <field name="tag_ids" eval="[(6, 0, [ ref('station_tag_fast_charging')])]"/>
     </record>
     <record id="charging_station_5" model="charging.station">
         <field name="name">Charging Station 5</field>
@@ -37,6 +66,7 @@
         <field name="status">available</field>
         <field name="voltage_capacity">11.0</field>
         <field name="active">True</field>
+        <field name="tag_ids" eval="[(6, 0,  [ref('station_tag_2_wheeler'), ref('station_tag_4_wheeler')])]"/>
     </record>
     <record id="charging_station_6" model="charging.station">
         <field name="name">Charging Station 6</field>
@@ -44,6 +74,7 @@
         <field name="status">occupied</field>
         <field name="voltage_capacity">11.0</field>
         <field name="active">True</field>
+        <field name="tag_ids" eval="[(6, 0 , [ref('station_tag_fast_charging'), ref('station_tag_2_wheeler')])]"/>
     </record>
     <record id="charging_station_7" model="charging.station">
         <field name="name">Charging Station 7</field>
@@ -51,6 +82,7 @@
         <field name="status">available</field>
         <field name="voltage_capacity">11.0</field>
         <field name="active">True</field>
+        <field name="tag_ids" eval="[(6, 0 , [ref('station_tag_4_wheeler'), ref('station_tag_fast_charging')])]"/>
     </record>
     <record id="charging_station_8" model="charging.station">
         <field name="name">Charging Station 8</field>
@@ -58,6 +90,7 @@
         <field name="status">available</field>
         <field name="voltage_capacity">11.0</field>
         <field name="active">True</field>
+        <field name="tag_ids" eval="[(6, 0,[ ref('station_tag_standard_charging'), ref('station_tag_2_wheeler')])]"/>
     </record>
     <record id="charging_station_9" model="charging.station">
         <field name="name">Charging Station 9</field>
@@ -65,6 +98,7 @@
         <field name="status">occupied</field>
         <field name="voltage_capacity">11.0</field>
         <field name="active">True</field>
+        <field name="tag_ids" eval="[(6, 0, [ref('station_tag_standard_charging'), ref('station_tag_fast_charging')])]"/>
     </record>
     <record id="charging_station_10" model="charging.station">
         <field name="name">Charging Station 10</field>
@@ -72,6 +106,7 @@
         <field name="status">available</field>
         <field name="voltage_capacity">11.0</field>
         <field name="active">True</field>
+        <field name="tag_ids" eval="[(6, 0 , [ref('station_tag_2_wheeler')])]"/>
     </record>
 
     <!-- user details -->
@@ -84,6 +119,7 @@
         <field name="phone">123-456-7890</field>
         <field name="email">john.doe@example.com</field>
         <field name="active">True</field>
+        <field name="image" type="base64" file="../../../community/odoo/addons/base/static/img/res_partner_address_1.jpg"/>
     </record>
     <record id="user_2" model="user.detail">
         <field name="name">Jane Smith</field>
@@ -93,6 +129,7 @@
         <field name="phone">987-654-3210</field>
         <field name="email">jane.smith@example.com</field>
         <field name="active">True</field>
+        <field name="image" type="base64" file="../../../community/odoo/addons/base/static/img/res_partner_address_3.jpg"/>
     </record>
     <record id="user_3" model="user.detail">
         <field name="name">Michael Brown</field>
@@ -102,6 +139,7 @@
         <field name="phone">555-123-4567</field>
         <field name="email">michael.brown@example.com</field>
         <field name="active">True</field>
+        <field name="image" type="base64" file="../../../community/odoo/addons/base/static/img/res_partner_address_7.jpg"/>
     </record>
     <record id="user_4" model="user.detail">
         <field name="name">Emily Wilson</field>
@@ -111,6 +149,7 @@
         <field name="phone">111-222-3333</field>
         <field name="email">emily.wilson@example.com</field>
         <field name="active">True</field>
+        <field name="image" type="base64" file="../../../community/odoo/addons/base/static/img/res_partner_address_13.jpg"/>
     </record>
     <record id="user_5" model="user.detail">
         <field name="name">Chris Evans</field>
@@ -120,6 +159,7 @@
         <field name="phone">111-222-3333</field>
         <field name="email">chris.evans@example.com</field>
         <field name="active">True</field>
+        <field name="image" type="base64" file="../../../community/odoo/addons/base/static/img/res_partner_address_27.jpg"/>
     </record>
     <record id="user_6" model="user.detail">
         <field name="name">Sophia Johnson</field>
@@ -129,6 +169,7 @@
         <field name="phone">444-555-6666</field>
         <field name="email">sophia.johnson@example.com</field>
         <field name="active">True</field>
+        <field name="image" type="base64" file="../../../community/odoo/addons/base/static/img/res_partner_address_14.jpg"/>
     </record>
     <record id="user_7" model="user.detail">
         <field name="name">Daniel Lee</field>
@@ -138,6 +179,7 @@
         <field name="phone">777-888-9999</field>
         <field name="email">daniel.lee@example.com</field>
         <field name="active">True</field>
+        <field name="image" type="base64" file="../../../community/odoo/addons/base/static/img/res_partner_address_17.jpg"/>
     </record>
     <record id="user_8" model="user.detail">
         <field name="name">Olivia Taylor</field>
@@ -147,6 +189,7 @@
         <field name="phone">111-222-3333</field>
         <field name="email">olivia.taylor@example.com</field>
         <field name="active">True</field>
+        <field name="image" type="base64" file="../../../community/odoo/addons/base/static/img/res_partner_address_31.jpg"/>
     </record>
     <record id="user_9" model="user.detail">
         <field name="name">William Martinez</field>
@@ -156,6 +199,7 @@
         <field name="phone">111-222-3333</field>
         <field name="email">william.martinez@example.com</field>
         <field name="active">True</field>
+        <field name="image" type="base64" file="../../../community/odoo/addons/base/static/img/res_partner_address_33.jpg"/>
     </record>
     <record id="user_10" model="user.detail">
         <field name="name">Sophie Clark</field>
@@ -165,6 +209,7 @@
         <field name="phone">111-222-3333</field>
         <field name="email">sophie.clark@example.com</field>
         <field name="active">True</field>
+        <field name="image" type="base64" file="../../../community/odoo/addons/base/static/img/res_partner_address_16.jpg"/>
     </record>
     
     <!-- vehicle record  -->

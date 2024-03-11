@@ -18,10 +18,22 @@
                 <sheet>
                     <group>
                         <field name="user_id" />
-                        <field name="station_id"/>
-                        <field name="vehicle_id" domain="[('user_id','=',user_id)]"/>
-                        <field name="current_charging" />
+                        <field name="vehicle_id" domain="[('user_id','=',user_id)]" />
+                        <field name="initial_charging" />
+                        <field name="is_fully_charged" invisible="status in ['charging','waiting']"/>
+                        <field name="final_charging" invisible="is_fully_charged == True"/>
+                        <field name="status" invisible="1"/>
                     </group>
+                    <notebook>
+                        <page string="More details" invisible="status == 'waiting' ">
+                            <group>
+                                <field name="station_id" readonly="1"/>
+                                <field name="in_line" readonly="1"/>
+                                <field name="in_time" readonly="1"/>
+                                <field name="out_time" readonly="1" invisible="status != 'charged' "/>
+                            </group>
+                        </page>
+                    </notebook>
                 </sheet>
             </form>
         </field>
@@ -35,7 +47,7 @@
                 <field name="user_id" />
                 <field name="station_id" />
                 <field name="vehicle_id" />
-                <field name="status"/>
+                <field name="status" />
             </search>
         </field>
     </record>
@@ -43,14 +55,17 @@
     <record id="session_view_tree" model="ir.ui.view">
         <field name="name">charging.session.view.tree</field>
         <field name="model">charging.session</field>
+
         <field name="arch" type="xml">
             <tree string="List of Charging Sessions">
                 <field name="station_id" />
                 <field name="vehicle_id" />
                 <field name="in_time" />
                 <field name="out_time" />
-                <button string="Connect" name="action_charge" type="object" icon="fa-plug"/>
-                <button string="Disconnect" name="action_discharge" type="object" icon="fa-stop-circle-o"/>
+                <button string="Connect" name="action_charge" type="object" icon="fa-plug"
+                    invisible="status in ['charging','charged']" />
+                <button string="Disconnect" name="action_discharge" type="object"
+                    icon="fa-stop-circle-o" invisible="status in ['waiting','charged']" />
                 <field name="status" />
             </tree>
         </field>
