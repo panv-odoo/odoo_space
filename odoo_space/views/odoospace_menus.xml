@@ -1,6 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-    <menuitem id="ospace_menu_root" name="Odoo Space" web_icon="odoo_space,static/img/icon.png" >
+    <record id="action_odoo_space_config" model="ir.actions.act_window">
+        <field name="name">odoo_space_settings</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">res.config.settings</field>
+        <field name="view_id" ref="res_config_settings_view_form" />
+        <field name="view_mode">form</field>
+        <field name="target">inline</field>
+        <field name="context">{'module' : 'odoo_space'}</field>
+    </record>
+    
+    <menuitem id="ospace_menu_root" name="Odoo Space" web_icon="odoo_space,static/description/icon.png" >
         <menuitem id="ospace_first_level_menu1" name="Charging Stations"  sequence="1">
             <menuitem id="station_model_menu_action" name="Station List" action="station_model_action" sequence="1"/>
             <menuitem id="station_tag_model_menu_action" name="Station Tag List" action="station_tag_model_action" sequence="2"/>
@@ -10,6 +20,9 @@
         </menuitem>
         <menuitem id="ospace_first_level_menu3" name="Users" sequence="3">
             <menuitem id="user_model_menu_action" name="User List" action="user_model_action" sequence="1"/>
+        </menuitem>
+        <menuitem id="ospace_first_level_menu4" name="Configuration" sequence="3">
+            <menuitem id="setting_model_menu_action" name="Settings" action="action_odoo_space_config" sequence="1"/>
         </menuitem>
     </menuitem>
 </odoo>

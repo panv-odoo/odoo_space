@@ -5,6 +5,7 @@ class User(models.Model):
     _description = "User Detail Model"
     _inherit = ['mail.thread','mail.activity.mixin']
     name = fields.Char('Name',required=True)
+    partner_id = fields.Many2one('res.partner')
     image = fields.Binary()
     address = fields.Char('Address (Locality)')
     department =  fields.Char("Department",required=True)

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+  <record id="res_config_settings_view_form" model="ir.ui.view">
+    <field name="name">res.config.settings.view.form.inherit.odoospace</field>
+    <field name="model">res.config.settings</field>
+    <field name="priority" eval="15" />
+    <field name="inherit_id" ref="base.res_config_settings_view_form" />
+    <field name="arch" type="xml">
+      <xpath expr="//form" position="inside">
+        <app data-string="Odoo Space" string="Odoo Space" name="odoo_space">
+          <block title="Charging Session Settings">
+            <setting help="Automatically Generate Invoice after each charging sessions">
+              <field name="module_account" />
+            </setting>
+          </block>
+        </app>
+      </xpath>
+    </field>
+  </record>
+
+</odoo>

@@ -12,11 +12,12 @@
 
     <record id="session_view_form" model="ir.ui.view">
         <field name="name">charging.session.view.form</field>
-        <field name="model">charging.session</field>
+        <field name="model">charging.session</field>    
         <field name="arch" type="xml">
             <form string="Charging Session Form">
                 <sheet>
                     <group>
+                        <field name="station_id"/>
                         <field name="user_id" />
                         <field name="vehicle_id" domain="[('user_id','=',user_id)]" />
                         <field name="initial_charging" />
